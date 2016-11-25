@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>EventOS Admin - Categorias</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+
+	<!--/*/ <th:block th:include="fragments/sidebar :: sidebar"></th:block> /*/-->
+	<div class="container" style="position: absolute;">
+		<div class="row col-md-6 col-md-offset-2 custyle">
+			<table class="table table-striped custab">
+				<thead>
+					<a href="#" th:href="@{/categoria/new}"
+						class="btn btn-primary btn-xs pull-right"><b>+</b> Añadir
+						nueva categoria</a>
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th class="text-center">Acci&oacute;n</th>
+					</tr>
+				</thead>
+
+				<tr th:each="c : ${categorias}">
+					<td th:text="${c.id}">Codigo</td>
+					<td th:text="${c.nombre}">Nombre</td>
+
+					<td class="text-center"><a class="btn btn-info btn-xs"
+						href="#" th:href="@{/categoria/edit/} + ${c.id}"><span
+							class="glyphicon glyphicon-edit"></span> Editar</a> <a
+						class="btn btn-danger btn-xs" href="#"
+						th:href="@{/categoria/delete/} + ${c.id}"><span
+							class="glyphicon glyphicon-remove"></span> Borrar</a></td>
+				</tr>
+
+
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+
+
+<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+
+
+	<!-- Page Content -->
+
+	<div class="container">
+
+		<div class="row carousel-holder">
+
+			<div class="col-md-12">
+				<div id="carousel-example-generic" class="carousel slide"
+					data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example-generic" data-slide-to="0"
+							class="active"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+						<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img class="slide-image"
+								src="../static/images/together-800x300.gif"
+								th:src="@{/images/together-800x300.gif}" />
+						</div>
+					</div>
+					<a class="left carousel-control" href="#carousel-example-generic"
+						data-slide="prev"> <span
+						class="glyphicon glyphicon-chevron-left"></span>
+					</a> <a class="right carousel-control" href="#carousel-example-generic"
+						data-slide="next"> <span
+						class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- /events row -->
+		<h2>
+			Ultimos agregados(<a>Ver Todos</a>)
+		</h2>
+
+		<div class="row">
+			<div class="col-md-4" th:each="i : ${#numbers.sequence(1,3)}">
+				<div class="thumbnail">
+					<img src="../static/images/350x150.jpg"
+						th:src="@{/images/350x150.jpg}" />
+					<div class="caption">
+						<h4 class="pull-right">$24.99</h4>
+						<h4>
+							<a href="#">First Product</a>
+						</h4>
+						<p>
+							See more snippets like this online store item at <a
+								target="_blank" href="http://www.bootsnipp.com">Bootsnipp -
+								http://bootsnipp.com</a>.
+						</p>
+					</div>
+					<div class="ratings">
+						<p class="pull-right">15 reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<!-- /events row -->
+		<h2>
+			Ultimos agregados(<a>Ver Todos</a>)
+		</h2>
+
+		<div class="row">
+			<div class="col-md-4" th:each="i : ${#numbers.sequence(1,3)}">
+				<div class="thumbnail">
+					<img src="../static/images/350x150.jpg"
+						th:src="@{/images/350x150.jpg}" />
+					<div class="caption">
+						<h4 class="pull-right">$24.99</h4>
+						<h4>
+							<a href="#">First Product</a>
+						</h4>
+						<p>
+							See more snippets like this online store item at <a
+								target="_blank" href="http://www.bootsnipp.com">Bootsnipp -
+								http://bootsnipp.com</a>.
+						</p>
+					</div>
+					<div class="ratings">
+						<p class="pull-right">15 reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- /events row -->
+		<h2>
+			Ultimos agregados(<a>Ver Todos</a>)
+		</h2>
+
+		<div class="row">
+			<div class="col-md-4" th:each="i : ${#numbers.sequence(1,3)}">
+				<div class="thumbnail">
+					<img src="../static/images/350x150.jpg"
+						th:src="@{/images/350x150.jpg}" />
+					<div class="caption">
+						<h4 class="pull-right">$24.99</h4>
+						<h4>
+							<a href="#">First Product</a>
+						</h4>
+						<p>
+							See more snippets like this online store item at <a
+								target="_blank" href="http://www.bootsnipp.com">Bootsnipp -
+								http://bootsnipp.com</a>.
+						</p>
+					</div>
+					<div class="ratings">
+						<p class="pull-right">15 reviews</p>
+						<p>
+							<span class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span> <span
+								class="glyphicon glyphicon-star"></span>
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<!-- /events row -->
+	</div>
+
+
+	<!-- /.container -->
+
+	<!-- /.container -->
+</body>
+
+</html>

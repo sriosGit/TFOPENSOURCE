@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<!--/*/ <th:block th:include="fragments/sidebar :: sidebar"></th:block> /*/-->
+
+	 <form th:object="${distrito}" th:action="@{/distrito/new}" method="post">
+		<input type="hidden" th:field="*{id}"/>
+
+ 	Nombre:<input type="text" th:field="*{nombre}"/>
+
+ 	<button type="submit">Registro</button>
+
+ </form>
+	
+
+</body>
+</html>

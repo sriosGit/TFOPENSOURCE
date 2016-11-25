@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>EventOS Admin - Usuarios</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<!--/*/ <th:block th:include="fragments/sidebar :: sidebar"></th:block> /*/-->
+
+	<form th:object="${usuario}" th:action="@{/usuario/new}" method="post">
+		<input type="hidden" th:field="*{id}" /> Nombres:<input type="text"
+			th:field="*{nombres}" /> Apellidos:<input type="text"
+			th:field="*{apellidos}" /> Edad:<input type="text"
+			th:field="*{edad}" /> Sexo:<select th:field="*{sexo}">
+			<option th:value="M" th:text="Masculino">sexo</option>
+			<option th:value="F" th:text="Femenino">sexo</option>
+		</select>
+
+		<p>Email:</p>
+		<input type="text" th:field="*{email}" />
+
+		<button type="submit">Registro</button>
+
+	</form>
+
+
+</body>
+</html>

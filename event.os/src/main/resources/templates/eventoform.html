@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+	<!--/*/ <th:block th:include="fragments/sidebar :: sidebar"></th:block> /*/-->
+
+	 <form th:object="${evento}" th:action="@{/evento/new}" method="post">
+		<input type="hidden" th:field="*{id}"/>
+		
+		
+ 	Nombre:<input type="text" th:field="*{nombre}"/>
+	
+ 	Categoria:<select id="categoria_id" th:field="*{categoria.id}">
+
+                <option th:each="c : ${categorias}" th:value="${c.id}"  th:text="${c.nombre}"></option>
+            </select>
+            	Distrito:<select id="distrito_id" th:field="*{distrito.id}">
+
+                <option th:each="d : ${distritos}" th:value="${d.id}"  th:text="${d.nombre}"></option>
+            </select>
+		Usuario:<select id="org_usuario_id" th:field="*{organizador.id}">
+
+                <option th:each="u : ${usuarios}" th:value="${u.id}"  th:text="${u.nombres} +' '+ ${u.apellidos}"></option>
+            </select>
+	
+ 	<p> Direccion:</p><input type="text" th:field="*{direccion}"/>
+	
+ 	Descripcion:<input type="text" th:field="*{descripcion}"/>
+	
+	
+	
+	
+ 	<button type="submit">Registro</button>
+
+ </form>
+	
+
+</body>
+</html>

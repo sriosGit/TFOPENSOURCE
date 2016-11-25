@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>EventOS Admin - Usuarios</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+
+
+	<!--/*/ <th:block th:include="fragments/sidebar :: sidebar"></th:block> /*/-->
+	<div class="container" style="position: absolute;">
+		<div class="row col-md-6 col-md-offset-2 custyle">
+			<table class="table table-striped custab">
+				<thead>
+					<a href="#" th:href="@{/usuario/new}"
+						class="btn btn-primary btn-xs pull-right"><b>+</b> Añadir
+						nueva usuario</a>
+					<tr>
+						<th>ID</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Edad</th>
+						<th>Sexo</th>
+						<th>Email</th>
+						
+						<th class="text-center" style="width: 20%">Acci&oacute;n</th>
+					</tr>
+				</thead>
+
+				<tr th:each="c : ${usuarios}">
+					<td th:text="${c.id}">Codigo</td>
+					<td th:text="${c.nombres}">Nombres</td>
+					<td th:text="${c.apellidos}">Apellidos</td>
+					<td th:text="${c.edad}">Edad</td>
+					<td th:text="${c.sexo}">Sexo</td>
+					<td th:text="${c.email}">Email</td>
+					
+					<td class="text-center "><a class="btn btn-info btn-xs"
+						href="#" th:href="@{/usuario/edit/} + ${c.id}"><span
+							class="glyphicon glyphicon-edit"></span> Editar</a> <a
+						class="btn btn-danger btn-xs" href="#"
+						th:href="@{/usuario/delete/} + ${c.id}"><span
+							class="glyphicon glyphicon-remove"></span> Borrar</a>
+					</td>
+				</tr>
+
+
+			</table>
+		</div>
+	</div>
+</body>
+</html>

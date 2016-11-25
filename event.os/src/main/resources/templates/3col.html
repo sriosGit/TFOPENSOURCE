@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+<title>EventOS</title>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+
+
+	<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+
+
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Page Header -->
+		<div class="row">
+			<div class="col-lg-12">
+				<h1  th:text="${soloNombre.nombre}" class="page-header">Page
+					Heading</h1>
+			</div>
+		</div>
+		<!-- /.row -->
+
+
+		<!-- Projects Row -->
+		<div class="row">
+			
+			<div th:each="e : ${eventos}" class="col-md-4 portfolio-item" >
+				<a href="#" > </a>
+				<h3>
+					<a th:href="@{/evento/{id}(id=${e.id})}" href="#" th:text = "${e.nombre}"></a>
+				</h3>
+				<p th:text="${e.descripcion}"></p>
+			</div>
+			
+		</div>
+		<!-- /.row -->
+
+		<!-- Projects Row -->
+		
+		<!-- /.row -->
+
+
+
+		<!-- Footer -->
+		<footer>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>Open Source &copy; EventOS 2016-2</p>
+				</div>
+			</div>
+			<!-- /.row -->
+		</footer>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

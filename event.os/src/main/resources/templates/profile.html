@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+
+<body>
+
+
+	<!--/*/ <th:block th:include="fragments/navbar :: navbar"></th:block> /*/-->
+
+
+	<div class="container">
+		<div class="row">
+
+			<div
+				class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3 class="panel-title"
+							th:text="${usuario.nombres} + ' ' + ${usuario.apellidos}">nombre</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class=" col-md-9 col-lg-9 ">
+								<table class="table table-user-information">
+									<tbody>
+										<tr>
+											<td>Edad:</td>
+											<td th:text="${usuario.edad}">edad</td>
+										</tr>
+										<tr>
+											<td>Sexo:</td>
+											<td th:text="${usuario.sexo}">edad</td>
+										</tr>
+										<tr>
+											<td>Email:</td>
+											<td th:text="${usuario.email}">edad</td>
+										</tr>
+
+									</tbody>
+								</table>
+
+
+							</div>
+						</div>
+					</div>
+					<div class="panel-footer">
+						<a data-original-title="Editar perfil" 
+						  data-toggle="modal" data-target="#squarespaceModal"	type="button" class="btn btn-sm btn-warning"><i
+							class="glyphicon glyphicon-edit"></i></a>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="modal fade" id="squarespaceModal" tabindex="-1"
+				role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">
+								<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+							</button>
+							<h3 class="modal-title" id="lineModalLabel">Editar perfil</h3>
+						</div>
+						<div class="modal-body">
+
+							<!-- content goes here -->
+
+							<form name="formEdit" th:object="${usuario}" th:action="@{/usuario/edit}"
+								method="post">
+								<input type="hidden" th:field="*{id}" /> Nombres:<input
+									type="text" th:field="*{nombres}" /> Apellidos:<input
+									type="text" th:field="*{apellidos}" /> Edad:<input type="text"
+									th:field="*{edad}" /> Sexo:<select th:field="*{sexo}">
+									<option th:value="M" th:text="Masculino">sexo</option>
+									<option th:value="F" th:text="Femenino">sexo</option>
+								</select>
+
+								<p>Email:</p>
+								<input type="text" th:field="*{email}" />
+
+
+							</form>
+
+
+						</div>
+						<div class="modal-footer">
+							<div class="btn-group btn-group-justified" role="group"
+								aria-label="group button">
+								<div class="btn-group" role="group">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal" role="button">Close</button>
+								</div>
+								<div class="btn-group btn-delete hidden" role="group">
+									<button type="button" id="delImage"
+										class="btn btn-default btn-hover-red" data-dismiss="modal"
+										role="button">Delete</button>
+								</div>
+								<div class="btn-group" role="group">
+									<button type="button" id="saveImage"
+										class="btn btn-default btn-hover-green" onClick="submitform()"
+										role="button">Save</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- /.container -->
+
+	<!-- /.container -->
+	<script type="text/javascript">
+	
+function submitform()
+{
+	
+  document.formEdit.submit();
+  
+}
+</script>
+</body>
+
+</html>
